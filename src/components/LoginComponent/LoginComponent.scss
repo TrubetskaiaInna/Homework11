@@ -1,0 +1,25 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+
+.wrapperForm{
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin-top: 50px;
+  padding: 10px;
+  border: 2px solid cornflowerblue;
+  border-radius: 40px/30px;
+  background-color: cadetblue;
+}
+
+.wrapperButton{
+  display: flex;
+  justify-content: center;
+}
+
+.inputUserName, .inputPassword{
+  margin-bottom: 8px;
+  width: 300px;
+}
