@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import './LoginComponent.scss'
-import { Route, Switch, NavLink, Redirect } from 'react-router-dom'
-import HomeComponent from '../HomeComponent/HomeComponent'
+import apiService from '../../services/apiService'
+import MessageComponent from '../MessageComponent/MessageComponent'
+import SpinnerComponent from '../SpinnerComponent/SpinnerComponent'
 
 class LoginComponent extends Component {
   constructor (props) {
     super(props)
+    console.log(55555, props)
     this.state = {
       userName: '',
-      hardName: 'Inna',
       password: '',
-      hardPassword: '111',
-      loggedIn: false
+      showMessage: false,
+      showSpinner: false,
+      validInput: false
     }
   }
 
@@ -24,60 +26,59 @@ class LoginComponent extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const {
-      userName,
-      password,
-      hardName,
-      hardPassword
-    } = this.state
-
-    if (userName === hardName && password === hardPassword) {
+    this.setState({ showSpinner: true })
+    const { userName, password, } = this.state
+    apiService.login({ userName, password })
+      .then(() => {
+        this.props.history.push('/home')
+      }).catch(() => {
       this.setState({
-        loggedIn: true
+        userName: '',
+        password: '',
+        showMessage: true,
+        showSpinner: false,
+        validInput: true
       })
-    }
-
-    this.setState({
-      userName: '',
-      password: ''
     })
   }
 
   render () {
     return (
-      <div className='wrapperForm'>
-        <form
-          onSubmit={this.onSubmit}>
-          <label>
+      <>
+        {this.state.showSpinner ? <SpinnerComponent/> :
+          <div className='wrapperForm'>
+            <form
+              onSubmit={this.onSubmit}>
+              <label>
+                <div className='userName'>
+                  <input name="userName"
+                         className={this.state.validInput ? 'inputUserNameValid' : 'inputUserName'}
+                         value={this.state.userName}
+                         type="text"
+                         onChange={this.onLabelChange}
+                         placeholder='Enter user name'
+                  />
+                </div>
 
-            <div className='userName'>
-              <input
-                name="userName"
-                className='inputUserName'
-                value={this.state.userName}
-                type="text"
-                onChange={this.onLabelChange}
-                placeholder='Enter user name'/>
-            </div>
+                <div className='password'>
+                  <input name="password"
+                         className={this.state.validInput ? 'inputPasswordValid' : 'inputPassword'}
+                         type="password"
+                         value={this.state.password}
+                         onChange={this.onLabelChange}
+                         placeholder='Enter password'/>
+                </div>
+              </label>
 
-            <div className='password'>
-              <input className='inputPassword'
-                     type="password"
-                     value={this.state.password}
-                     name="password"
-                     onChange={this.onLabelChange}
-                     placeholder='Enter password'/>
-            </div>
+              <div className='wrapperButton'>
+                <button className='btn btn-warning'>Login</button>
+              </div>
+            </form>
 
-          </label>
-          <Route exact path="/">
-            {this.state.loggedIn ? <Redirect from='/' to="/home"/> : null}
-          <div className='wrapperButton'>
-            <button className='btn btn-warning'>Login</button>
+            {this.state.showMessage ? <MessageComponent/> : null}
           </div>
-          </Route>
-        </form>
-      </div>
+        }
+      </>
     )
   }
 }

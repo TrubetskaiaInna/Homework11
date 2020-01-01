@@ -1,0 +1,33 @@
+.headerAbout{
+  width: 1200px;
+  height: 200px;
+  background-image: url(../../assets/images/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text{
+  width: 1200px;
+  text-align: center;
+  font-size: 35px;
+  color: blue;
+}
+
+.wrapperHoliday{
+  margin-top: 50px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h3{
+color: grey;
+}
+
+.holiday{
+  text-align: center;
+  color: gainsboro;
+}
+
+
+

@@ -22,4 +22,13 @@ body{
 .inputUserName, .inputPassword{
   margin-bottom: 8px;
   width: 300px;
+  outline: none;
 }
+
+.inputUserNameValid, .inputPasswordValid{
+  margin-bottom: 8px;
+  width: 300px;
+  outline: none;
+  border: 2px double red;
+}
+

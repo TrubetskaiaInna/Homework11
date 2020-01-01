@@ -1,0 +1,56 @@
+
+.wrapperHomeComponent{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+  width: 1200px;
+  height: 800px;
+  background-image: url(../../assets/images/5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapperWelcome{
+  display: flex;
+  width: 1200px;
+  height: 10%;
+  justify-content: center;
+  color: indigo;
+}
+
+header{
+  display: flex;
+  width: 800px;
+  height: 10%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.linc,.linc:hover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 10px;
+  //margin-left: 20px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.linc:hover{
+  background-color: yellowgreen;
+}
+
+section{
+  width: 700px;
+  height: 80%;
+  padding-top: 100px;
+  //margin-left: 270px;
+  //margin-top: 200px;
+  font-size: 45px;
+  color: mediumpurple;
+}
