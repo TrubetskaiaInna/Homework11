@@ -30,6 +30,7 @@ class LoginComponent extends Component {
     const { userName, password, } = this.state
     apiService.login({ userName, password })
       .then(() => {
+        this.props.setUser({ userName, password })
         this.props.history.push('/home')
       }).catch(() => {
       this.setState({
