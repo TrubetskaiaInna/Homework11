@@ -12,8 +12,7 @@ class AboutComponent extends Component {
   }
 
   componentDidMount () {
-    this.setState({ holidays: apiService.display() })
-    console.log(apiService.display())
+    setTimeout(() => { this.setState({ holidays: apiService.display() }) }, 200)
   }
 
   render () {

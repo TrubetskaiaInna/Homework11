@@ -1,5 +1,4 @@
-
-.wrapperHomeComponent{
+.wrapperHomeComponent {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -10,7 +9,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.wrapperWelcome{
+
+.wrapperWelcome {
   display: flex;
   width: 1200px;
   height: 10%;
@@ -18,7 +18,7 @@
   color: indigo;
 }
 
-header{
+header {
   display: flex;
   width: 800px;
   height: 10%;
@@ -26,9 +26,7 @@ header{
   align-items: center;
 }
 
-
-
-.linc,.linc:hover{
+.linc, .linc:hover {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,21 +34,23 @@ header{
   height: 50px;
   background-color: yellow;
   border-radius: 10px;
-  //margin-left: 20px;
   text-decoration: none;
   font-size: 25px;
 }
 
-.linc:hover{
+.linc:hover {
   background-color: yellowgreen;
 }
 
-section{
+section {
+  display: flex;
   width: 700px;
   height: 80%;
   padding-top: 100px;
-  //margin-left: 270px;
-  //margin-top: 200px;
   font-size: 45px;
   color: mediumpurple;
+}
+
+.HomeComponentText{
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import rootReducer from './reducers/index'
+import rootReducer from '../reducers'
 
 function configureStore (initialState = {}) {
   const store = createStore(persistReducer({
@@ -9,8 +9,6 @@ function configureStore (initialState = {}) {
     debug: true,
     storage
   }, rootReducer), initialState)
-
-  console.log('initialState', store.getState())
 
   const persistor = persistStore(store, null, () => {
     console.log('restoredState', store.getState())

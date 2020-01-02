@@ -7,7 +7,6 @@ import SpinnerComponent from '../SpinnerComponent/SpinnerComponent'
 class LoginComponent extends Component {
   constructor (props) {
     super(props)
-    console.log(55555, props)
     this.state = {
       userName: '',
       password: '',
@@ -15,6 +14,10 @@ class LoginComponent extends Component {
       showSpinner: false,
       validInput: false
     }
+  }
+
+  componentDidMount () {
+    window.localStorage.setItem('success', 'false')
   }
 
   onLabelChange = (e) => {

@@ -4,7 +4,7 @@ import HomeComponent from './components/HomeComponent/HomeComponentContainer'
 import LoginComponent from './components/LoginComponent/LoginComponentContainer'
 import AboutComponent from './components/AboutComponent/AboutComponentContainer'
 import ReactSlickDemo from './components/CarouselComponent/CarouselComponent'
-import { ProtectedRoute } from './services/apiService'
+import { ProtectedRoute } from './services/protectedRoute'
 
 function App () {
   return (
