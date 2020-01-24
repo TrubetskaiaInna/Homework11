@@ -1,7 +1,7 @@
-export const setUser = (user) => {
-  return { type: 'SET_USER', user }
-}
+import holiday from './holiday'
+import user from './user'
 
-export const setHoliday = (holiday) => {
-  return { type: 'SET_HOLIDAY', holiday }
+export {
+  holiday,
+  user
 }

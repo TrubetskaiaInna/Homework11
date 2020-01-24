@@ -1,9 +1,10 @@
-const holiday = (state = {}, action) => {
+import { holiday } from '../constants'
+
+export default (state = {}, action) => {
   switch (action.type) {
-    case 'SET_HOLIDAY':
+    case holiday.SET_HOLIDAY:
       return action.holiday
     default:
       return state
   }
 }
-export default holiday
