@@ -6,6 +6,7 @@ import './CarouselComponent.scss'
 import img from '../../assets/images/4-5-1024x768.jpg'
 import img1 from '../../assets/images/45.jpg'
 import img2 from '../../assets/images/46.jpg'
+import HeaderComponent from '../HeaderComponent/HeaderComponent'
 
 class SimpleSlider extends React.Component {
   render () {
@@ -18,6 +19,7 @@ class SimpleSlider extends React.Component {
     }
     return (
       <div className='wrapperCarousel'>
+        <HeaderComponent />
         <Slider {...settings}>
           <div>
             <img src={img} alt={'img'} />

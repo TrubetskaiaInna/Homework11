@@ -5,6 +5,7 @@ import LoginComponent from './components/LoginComponent/LoginComponentContainer'
 import AboutComponent from './components/AboutComponent/AboutComponentContainer'
 import ReactSlickDemo from './components/CarouselComponent/CarouselComponent'
 import { ProtectedRoute } from './services/protectedRoute'
+import HeaderComponent from './components/HeaderComponent/HeaderComponent'
 
 function App () {
   return (
@@ -12,6 +13,7 @@ function App () {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={LoginComponent} />
+          <ProtectedRoute path='/header' component={HeaderComponent} />
           <ProtectedRoute path='/home' component={HomeComponent} />
           <ProtectedRoute path='/about' component={AboutComponent} />
           <ProtectedRoute path='/photo' component={ReactSlickDemo} />
